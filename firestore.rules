@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // All gateway access goes through the server. Admin SDK access uses IAM.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

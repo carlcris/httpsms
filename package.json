@@ -1,0 +1,30 @@
+{
+  "name": "sms-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --import tsx scripts/dev.ts",
+    "build": "npm run typecheck && node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test gateway-tests/*.test.ts",
+    "test:firestore": "node --import tsx --test gateway-tests/firestore.integration.ts",
+    "check": "npm test && npm run build",
+    "provision": "node --env-file-if-exists=.env --import tsx scripts/provision.ts"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.5.0",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^6.0.2",
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

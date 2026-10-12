@@ -19,3 +19,12 @@ SECURITY_AUDIT_REPORT.md
 skills-lock.json
 .worktrees/
 docs/superpowers
+
+# Netlify gateway
+!.env.example
+/node_modules/
+/dist/
+/.netlify/
+/gateway-credentials*.json
+/firestore-debug.log
+/firebase-debug.log

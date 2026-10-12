@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Preview deployments must use a separate Firebase project and phone.
+# Production credentials belong in Netlify's Functions-scoped environment variables.
